@@ -13,12 +13,12 @@ Clone the repository
 Install the required libraries
 ```pip install -r requirements.txt```
 
-## Setup OPENAI
+### Setup OPENAI
 
 Put an OPENAI API key
 ```[key] >> .api_openai```
 
-## Setup HuggingFace
+### Setup HuggingFace
 
 Download the models in a folder and update the link to the folder in lanlab/core/module/models/hf_models;py -> HFMODELSPATH
 
