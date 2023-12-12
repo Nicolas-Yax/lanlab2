@@ -27,7 +27,7 @@ Download the models in a folder and update the link to the folder in lanlab/core
 To be implemented in later version.
 
 ## How to learn the framework
-A tutorial notebook is available at the root of the respository. It can be done in less than 15 minutes and explains most of what is necessary to use the framework. In addition two notebooks crt.ipynb and logscores.ipynb are exemples of research projects lead by the HRL team using this framework (https://arxiv.org/ftp/arxiv/papers/2309/2309.12485.pdf).
+A tutorial notebook is available at the root of the respository. It can be done in less than 15 minutes and explains most of what is necessary to use the framework. In addition a notebook crt.ipynb is an example of a research project lead by the HRL team using this framework (https://arxiv.org/ftp/arxiv/papers/2309/2309.12485.pdf).
 
 ## Problems with the framework ?
 If you find bugs or aren't sure about something in the framework please open an issue. I'll try to answer your questions, add tutorials, solve bugs as soon as I can.
