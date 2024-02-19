@@ -275,6 +275,7 @@ def complete(tokenizer,model,data,temperature,max_tokens):
     #generate the completion with the required parameters
     with torch.no_grad():
         token_ids,logits = generate(model,tokenizer,inp_batch,max_tokens,temperature=temperature)
+    token_ids = token_ids.cpu()
     results = [dict_to_openai(token_ids[i],logits[i],tokenizer,temperature,return_logits=return_logits[i],nb_logprobs=nb_logprobs[i],inputs_to_remove=inp_batch.input_ids[i] if not echo[i] else None) for i in range(len(configs))]
     for r,p in zip(results,pipes):
         p.send(r)
@@ -319,8 +320,8 @@ def generate(model,tokenizer,inp_batch,max_tokens,temperature):
                 last_token_ids = last_logits.argmax(-1)
         token_ids.append(last_token_ids)
 
-    return torch.stack(token_ids,dim=1).cpu(),torch.stack(logits,dim=1).cpu()
-
+    return torch.stack(token_ids,dim=1),torch.stack(logits,dim=1)
+    
 def dict_to_openai(token_ids,logits,tokenizer,temperature,return_logits=False,nb_logprobs=5,inputs_to_remove=None):
     """ Returns the data in the OPENAI format"""
     #Compute logp associated with these ids
