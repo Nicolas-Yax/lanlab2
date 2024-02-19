@@ -380,7 +380,7 @@ def dict_to_openai(token_ids,logits,tokenizer,temperature,return_logits=False,nb
     generated_tokens = [generated_tokens[i] for i in index_pad]
     tokens_logprobs = [tokens_logprobs[i] for i in index_pad]
     top_logprobs = [top_logprobs[i] for i in index_pad]
-    logits = logits.numpy().astype(np.float16)[index_pad,:]
+    logits = logits.cpu().numpy().astype(np.float16)[index_pad,:]
     logits = logits.tolist()
     
     #Return the dict
