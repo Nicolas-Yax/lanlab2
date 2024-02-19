@@ -572,6 +572,14 @@ class Llama2GGUF_13B(LlamaFamily):
     @property
     def name(self):
         return 'LLA2HF_13'"""
+
+class Llama2_7B_GPTQ(LlamaFamily):
+    @property
+    def engine(self):
+        return 'Llama-2-7B-GPTQ'
+    @property
+    def name(self):
+        return 'LLA2_7_GPTQ'
     
 class Orca2_7B(LlamaFamily):
     @property
