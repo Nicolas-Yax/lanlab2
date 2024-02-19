@@ -411,7 +411,7 @@ class LlamaFamily(HFModel):
         from transformers import AutoTokenizer,AutoModelForCausalLM
         tokenizer = AutoTokenizer.from_pretrained(os.path.join(HFMODELSPATH,self.engine))
         #tokenizer.pad_token = tokenizer.eos_token
-        model = AutoModelForCausalLM.from_pretrained(os.path.join(HFMODELSPATH,self.engine))#,torch_dtype=torch.bfloat16)
+        model = AutoModelForCausalLM.from_pretrained(os.path.join(HFMODELSPATH,self.engine),device_map='auto')#,torch_dtype=torch.bfloat16)
         return tokenizer,model
 
 class Llama7B(LlamaFamily):
@@ -600,7 +600,7 @@ class BloomFamily(HFModel):
         from transformers import AutoTokenizer,BloomForCausalLM
         tokenizer = AutoTokenizer.from_pretrained(os.path.join(HFMODELSPATH,self.engine))
         #tokenizer.pad_token = tokenizer.eos_token
-        model = BloomForCausalLM.from_pretrained(os.path.join(HFMODELSPATH,self.engine))
+        model = BloomForCausalLM.from_pretrained(os.path.join(HFMODELSPATH,self.engine),device_map='auto')
         return tokenizer,model
 
     
