@@ -3,3 +3,5 @@ numpy
 matplotlib
 multiprocess
 flask
+xlsxwriter
+openpyxl
