@@ -34,3 +34,8 @@ If you find bugs or aren't sure about something in the framework please open an 
 
 ## Contributions
 This framework is made to be as simple as possible to learn. Contributions are always welcome as long as they make things simpler for users while being very simple to learn to use.
+
+## Examples
+Three notebooks are provided as an example of how the framework can be used :
+  - tutorial.ipynb : provides an introduction to the framework and its functionalities.
+  - crt.ipynb and cf.ipynb are notebooks that replicate results published in our paper https://www.nature.com/articles/s44271-024-00091-8
